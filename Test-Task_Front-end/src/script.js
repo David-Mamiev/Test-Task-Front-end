@@ -13,6 +13,7 @@ import Img12 from './imgs/det-img3.png';
 import Img13 from './imgs/det-img4.png';
 import Img14 from './imgs/det-sem.png';
 
+
 let range = document.querySelectorAll(".slider__range")[0];
 let rangeNumber = document.querySelectorAll(".slider__number-range")[0];
 let range2 = document.querySelectorAll(".slider__range")[1];
@@ -28,11 +29,24 @@ range2.oninput = function() {
     rangeNumber2.innerHTML = this.value + "%";
 }
 range3.oninput = function() {
+    if((Number(range.value) + Number(range2.value) > 60)){
+        range3.value = 40;
+    }
+    if((Number(range.value) + Number(range2.value) + Number(range3.value)) > 90){
+        range4.value = 10;
+    }
     rangeNumber3.innerHTML = this.value + "%";
 }
 range4.oninput = function() {
+    if((Number(range.value) + Number(range2.value) + Number(range3.value)) > 90){
+        range4.value = 10;
+    }
     rangeNumber4.innerHTML = this.value + "%";
 }
+
+
+
+
 const butPack = document.querySelector(".cracker-cons__but-slider");
 const menuPack = document.querySelector(".pack-menu");
 const pack1 = document.querySelectorAll(".pack-menu__item")[0];
