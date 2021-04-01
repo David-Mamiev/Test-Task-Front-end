@@ -12,6 +12,7 @@ import Img11 from './imgs/det-img2.png';
 import Img12 from './imgs/det-img3.png';
 import Img13 from './imgs/det-img4.png';
 import Img14 from './imgs/det-sem.png';
+import Img15 from './imgs/header-logo.png';
 
 
 let range = document.querySelectorAll(".slider__range")[0];
@@ -23,19 +24,25 @@ let rangeNumber3 = document.querySelectorAll(".slider__number-range")[2];
 let range4 = document.querySelectorAll(".slider__range")[3];
 let rangeNumber4 = document.querySelectorAll(".slider__number-range")[3];
 range.oninput = function() {
+    let actuelValue = ((Number(range.value) + Number(range2.value) + Number(range3.value)) < 100) ? (100 - (Number(range2.value) + Number(range3.value))) : "";
+    range.value = actuelValue;
     rangeNumber.innerHTML = this.value + "%";
 }
 range2.oninput = function() {
+    let actuelValue2 = ((Number(range.value) + Number(range2.value) + Number(range3.value)) < 100) ? (100 - (Number(range.value) + Number(range3.value))) : "";
+    range.value = actuelValue2;
     rangeNumber2.innerHTML = this.value + "%";
 }
 range3.oninput = function() {
-    if((Number(range.value) + Number(range2.value) > 60)){
+    if((Number(range.value) + Number(range2.value)) > 60){
         range3.value = 40;
     }
     if((Number(range.value) + Number(range2.value) + Number(range3.value)) > 90){
         range4.value = 10;
     }
     rangeNumber3.innerHTML = this.value + "%";
+    let actuelValue = ((Number(range.value) + Number(range2.value) + Number(range3.value)) < 100) ? (100 - (Number(range.value) + Number(range3.value))) : "";
+    range.value = actuelValue;
 }
 range4.oninput = function() {
     if((Number(range.value) + Number(range2.value) + Number(range3.value)) > 90){
