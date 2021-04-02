@@ -23,37 +23,27 @@ let range3 = document.querySelectorAll(".slider__range")[2];
 let rangeNumber3 = document.querySelectorAll(".slider__number-range")[2];
 let range4 = document.querySelectorAll(".slider__range")[3];
 let rangeNumber4 = document.querySelectorAll(".slider__number-range")[3];
+
 range.oninput = function() {
-    let actuelValue = ((Number(range.value) + Number(range2.value) + Number(range3.value)) < 100) ? (100 - (Number(range2.value) + Number(range3.value))) : "";
-    range.value = actuelValue;
+    let actuelValue = 100 - (Number(range2.value) + Number(range3.value));
+    range.max = actuelValue;
     rangeNumber.innerHTML = this.value + "%";
 }
 range2.oninput = function() {
-    let actuelValue2 = ((Number(range.value) + Number(range2.value) + Number(range3.value)) < 100) ? (100 - (Number(range.value) + Number(range3.value))) : "";
-    range.value = actuelValue2;
+    let actuelValue = 100 - (Number(range.value) + Number(range3.value));
+    range2.max = actuelValue;
     rangeNumber2.innerHTML = this.value + "%";
 }
 range3.oninput = function() {
-    if((Number(range.value) + Number(range2.value)) > 60){
-        range3.value = 40;
-    }
-    if((Number(range.value) + Number(range2.value) + Number(range3.value)) > 90){
-        range4.value = 10;
-    }
+    let actuelValue = 100 - (Number(range.value) + Number(range2.value));
+    range3.max = actuelValue;
     rangeNumber3.innerHTML = this.value + "%";
-    let actuelValue = ((Number(range.value) + Number(range2.value) + Number(range3.value)) < 100) ? (100 - (Number(range.value) + Number(range3.value))) : "";
-    range.value = actuelValue;
 }
 range4.oninput = function() {
-    if((Number(range.value) + Number(range2.value) + Number(range3.value)) > 90){
-        range4.value = 10;
-    }
+    let actuelValue = 100 - (Number(range.value) + Number(range2.value) + Number(range3.value));
+    range4.value = actuelValue;
     rangeNumber4.innerHTML = this.value + "%";
 }
-
-
-
-
 const butPack = document.querySelector(".cracker-cons__but-slider");
 const menuPack = document.querySelector(".pack-menu");
 const pack1 = document.querySelectorAll(".pack-menu__item")[0];
