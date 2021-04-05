@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    padding: 10px 20px;
+}
+#game{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: darkorange;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.block{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    text-align: center;
+    color: #fff;
+    line-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block2{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border: 1px solid #fff;
+    text-align: center;
+    color: #fff;
+    line-height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.krug{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.krest{
+    transform: rotate(45deg);
+    font-size: 25px;
+    font-weight: 600;
+}
+#restart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 135px;
+    height: 50px;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid darkorange;
+    background-color: darkorange;
+    
+}
+.game_win{
+    pointer-events: none;
+}
+.numberWins{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+}
+#numberWinsKrest, #numberWinsKrug{
+    padding-right: 5px;
+}
+
+
